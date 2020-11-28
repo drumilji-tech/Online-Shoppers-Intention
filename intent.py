@@ -112,6 +112,7 @@ def main():
             st.write("Recall:",recall_score(y_test,y_pred).round(2))
             plot_metrics(metrics)
             
+            
     if Model == "Decision Tree":
         st.sidebar.subheader("Model Hyperparameters")
         criterion= st.sidebar.radio('Criterion(measures the quality of split)', ('Gini', 'Entropy'), key='criterion')
