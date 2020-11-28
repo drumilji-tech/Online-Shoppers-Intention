@@ -109,6 +109,7 @@ def main():
             model = DecisionTreeClassifier()
             model.fit(x_train, y_train)
             y_pred = model.predict(x_test)
+            accuracy = Model.score(x_test,y_test)
             st.write("Accuracy:",accuracy.round(2))
             st.write("Precision:",precision_score(y_test,y_pred).round(2))
             st.write("Recall:",recall_score(y_test,y_pred).round(2))
