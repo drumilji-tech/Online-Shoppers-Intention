@@ -55,7 +55,7 @@ def main():
     class_names = ['Default','Not Default']
     
     st.sidebar.subheader('Choose Model')
-    Model = st.sidebar.selectbox("Model",('Logistic Regression','Decision Tree','Random Forest','Support Vector Machine'))
+    Model = st.sidebar.selectbox("Model",('Logistic Regression','Decision Tree','Random Forest'))
     
     
     if Model == "Logistic Regression":
@@ -96,19 +96,7 @@ def main():
             st.write("Recall:",recall_score(y_test,y_pred).round(2))
             plot_metrics(metrics)
     
-    if Model == "Support Vector Machine":
-        st.sidebar.subheader("Model Hyperparameters")
-        kernel= st.sidebar.radio('Type of Kernel to be selected', ('Linear', 'RBF','Ploynomial'), key='kernel')
-        C_value = st.sidebar.slider("Select C Value",1,20,key='C_value')
-        metrics = st.sidebar.selectbox("Which metrics to plot?",('ROC Curve','Precision Recall Curve','Confusion Matrix'),key='1')
-        
-        if st.sidebar.button("Classify",key='class'):
-            st.subheader('SVM Results')
-            model = SVC()
-            model.fit(x_train, y_train)
-            y_pred = model.predict(x_test)
-            plot_metrics(metrics)
-            
+  
             
     if Model == "Decision Tree":
         st.sidebar.subheader("Model Hyperparameters")
