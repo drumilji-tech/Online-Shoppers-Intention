@@ -133,7 +133,7 @@ def main():
      
     
     if st.sidebar.checkbox("Show Raw Data",False):
-        st.subheader("Credit Card Default Data")
+        st.subheader("Shoppers-Intention Data")
         st.write(data)
 
 
