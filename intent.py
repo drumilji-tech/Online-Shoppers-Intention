@@ -100,8 +100,8 @@ def main():
             
     if Model == "Decision Tree":
         st.sidebar.subheader("Model Hyperparameters")
-        criterion= st.sidebar.radio('Criterion(measures the quality of split)', ('Gini', 'Entropy'), key='criterion')
-        splitter = st.sidebar.radio('Splitter (How to split at each node?)', ('Best','Random'), key='splitter')
+        criterion= st.sidebar.radio('Criterion(measures the quality of split)', ('gini', 'entropy'), key='criterion')
+        splitter = st.sidebar.radio('Splitter (How to split at each node?)', ('best','random'), key='splitter')
         metrics = st.sidebar.selectbox("Which metrics to plot?",('ROC Curve','Precision Recall Curve','Confusion Matrix'))
         
         if st.sidebar.button("Classify",key='class'):
